@@ -1,0 +1,130 @@
+/* assets/style.css
+   SmartShelf — blue-violet modern theme with dark mode
+   Place this file in /assets/style.css
+*/
+:root{
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent1: #5b6bff;
+  --accent2: #7b4dff;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 8px 30px rgba(23,32,55,0.08);
+  --radius: 14px;
+  --text:#0b1220;
+  --transition: 320ms cubic-bezier(.2,.9,.3,1);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(180deg, var(--bg), #eaf3ff);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Dark theme */
+body.theme-dark{
+  --bg: #071227;
+  --card: #071a2a;
+  --muted: #9aaec2;
+  --accent1:#4b80ff;
+  --accent2:#7b4dff;
+  --glass: rgba(255,255,255,0.04);
+  --shadow: 0 12px 40px rgba(2,6,23,0.6);
+  --text: #ecf2ff;
+  background: linear-gradient(180deg,#041029,#061726);
+}
+
+/* Container */
+.container{max-width:1140px;margin:0 auto;padding:2rem}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:40;backdrop-filter: blur(6px);padding:0.6rem 0;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--text)}
+.brand-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--accent1),var(--accent2));border-radius:8px;padding:7px;box-shadow:var(--shadow)}
+.brand-text{font-weight:700;font-size:1.1rem;letter-spacing:0.2px}
+.nav-links{display:flex;gap:1rem;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--text);background:var(--glass)}
+
+/* nav actions */
+.nav-actions{display:flex;gap:0.6rem;align-items:center}
+.btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:8px 14px;border-radius:10px;border:0;cursor:pointer;box-shadow: var(--shadow);text-decoration:none}
+.btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:7px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+.btn-primary.small, .btn-ghost.small{padding:6px 10px;font-size:0.9rem}
+.btn-icon{background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer}
+.btn-icon .dot{width:18px;height:18px;border-radius:50%;display:inline-block;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+
+/* HERO */
+.hero{display:flex;gap:2.4rem;align-items:stretch;padding:3rem 0}
+.hero-left{flex:1}
+.hero-right{flex:0 0 420px;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.title{font-size:48px;margin:0 0 8px 0}
+.tagline{font-weight:600;color:var(--accent2);margin:0 0 16px 0;font-size:1.1rem}
+.hero-desc{color:var(--muted);max-width:52ch}
+.hero-cta{margin-top:20px;display:flex;gap:0.7rem;align-items:center}
+.btn-cta{padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
+
+/* auth cards */
+.auth-card-wrapper{display:flex;flex-direction:column;gap:12px;width:100%}
+.auth-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow);width:100%;max-width:420px}
+.card-register{border-left:4px solid rgba(123,77,255,0.12)}
+.card-login{}
+.auth-card h3{margin:0 0 10px 0}
+.auth-form{display:flex;flex-direction:column;gap:8px}
+.auth-form label{display:flex;flex-direction:column;font-size:0.9rem;color:var(--muted)}
+.auth-form input{padding:10px;border-radius:10px;border:1px solid rgba(10,14,20,0.06);margin-top:6px;outline:none;background:transparent}
+.auth-actions{display:flex;justify-content:space-between;align-items:center;margin:6px 0}
+.checkbox input{margin-right:8px}
+.muted{color:var(--muted);font-size:0.85rem;margin-top:8px}
+
+/* shelf visual placeholder */
+.shelf-visual img{max-width:320px;border-radius:12px;box-shadow:var(--shadow)}
+
+/* features */
+.features{padding:3rem 0}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feature-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);transition:transform var(--transition),box-shadow var(--transition)}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(11,18,32,0.12)}
+
+/* footer */
+.footer{padding:2.4rem 0;border-top:1px solid rgba(10,14,20,0.04);margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.footer a{color:var(--muted);text-decoration:none}
+
+/* animations */
+.animate-up{opacity:0;transform:translateY(16px);transition:opacity 520ms var(--transition), transform 520ms var(--transition)}
+.animate-up.delay{transition-delay:120ms}
+.animate-up.delay-2{transition-delay:220ms}
+.animate-up.delay-3{transition-delay:320ms}
+
+/* small screens */
+@media (max-width: 900px){
+  .hero{flex-direction:column}
+  .hero-right{flex-basis:auto;width:100%}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+}
+
+/* tiny screens */
+@media (max-width: 520px){
+  .features-grid{grid-template-columns:1fr}
+  .title{font-size:34px}
+  .brand-text{display:none}
+}
+
+/* helper: reveal state (JS toggles .reveal) */
+.reveal{opacity:1;transform:none}
+/* Contact Page */
+.contact-container{padding-top:4rem;max-width:680px}
+.contact-form{display:flex;flex-direction:column;gap:1rem;margin-top:1rem;background:var(--card);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+.contact-form textarea{resize:vertical;border-radius:12px;border:1px solid rgba(0,0,0,0.1);padding:12px}
+.contact-extra{display:flex;gap:1.5rem;margin-top:2rem}
+.contact-extra .feature{flex:1;background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+.contact-extra h4{margin:0 0 4px}
+.contact-extra p{margin:0;color:var(--muted)}
